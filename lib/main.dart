@@ -32,7 +32,7 @@ class Homescreen extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Expanded(
-            flex: 2,
+            
             child: Container(
               color: Colors.yellow,
               child: Column(
@@ -73,58 +73,19 @@ class Homescreen extends StatelessWidget {
               ),
             ),
           ),
-          Expanded(
-            child: Container(
-              decoration: BoxDecoration(
-                color: Colors.purple,
-                borderRadius: BorderRadius.circular(100),
-                border: Border.all(color: Colors.blue, width: 10),
-              ),
-              child:  const Center(child: Text('B-HUB')),
+          const Expanded(
+            child: SizedBox(
+            width: 300, // Adjust the width
+            height: 300, // Adjust the height
+            child:  Image(
+              image: AssetImage('images/learning.png'),
             ),
           ),
-          Expanded(
-            child: Container(
-              color: Colors.green,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Text(
-                    name,
-                    textAlign: TextAlign.center,
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 27,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                    TextButton(
-                      onPressed: () {
-                        print('Click Me');
-                      },
-                      child:  const Text('Click Me'),
-                    ),
-                    IconButton(
-                      onPressed: () {},
-                      icon:  const Icon(Icons.mic),
-                    ),
-                  ]),
-                  //   icon:Icons.mic),
-                  // ],),
-                  ElevatedButton(
-                    onPressed: () {
-                      print('Elevated Button Clicked');
-                    },
-                    child:  const Text('Click Me'),
-                  ),
-                ],
-              ),
-            ),
-          )
+          ),
         ],
-      )),
+  
+    ),
+    ),
     );
   }
 }
